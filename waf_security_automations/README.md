@@ -38,7 +38,7 @@ Configuring WAF rules can be challenging and burdensome to large and small organ
 request log를 분석하여 특정 조건(threshold, ignore sufixes 등)에 맞으면 차단 IP 리스트 업데이트
 
 * Log Parser
-  * AWS WAF rate based rule : 2,000 requests in a five-minute period 와 같이 request threshold를 
+  * AWS WAF rate based rule : 2,000 requests in a five-minute period 와 같이 request threshold를 설정
   * AWS Lambda log parser
   * Amazon Athena log parser
 
