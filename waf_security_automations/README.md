@@ -52,9 +52,11 @@ request를 분석하여 특정 조건(threshold, http error code 등)에 맞으�
 ### 8. Bad Bot
 Honeypot end-point를 정상적인 요청에서는 사용하지 않는 url(.../products/666)로 매핑시켜 공격자를 판별
 ![alt text](bad-bot.png)
+> 주의!! Google/Naver도 bot을 사용하기에 robot.txt 파일에 "Disallow: Disallow: /.../products"와 같은 것을 설정해야함
 
 # Reference
 * AWS WAF Security Automations : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/welcome.html
 * Honeypot : https://en.wikipedia.org/wiki/Honeypot_(computing)
 * Log Parser Options : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/appendix-a.html
 * 보안 항목별 IP 업데이트 상세 : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/appendix-b.html
+* robots.txt : https://constant.kr/blog/2018/08/01/robots-txt%EC%9D%B4%EB%9E%80-robots-txt%EC%9D%98-%EC%9A%A9%EB%8F%84%EC%99%80-%ED%99%9C%EC%9A%A9%EB%B0%A9%EB%B2%95/
