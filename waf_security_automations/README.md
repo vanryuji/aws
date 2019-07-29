@@ -50,11 +50,11 @@ request를 분석하여 특정 조건(threshold, http error code 등)에 맞으�
 ![alt text](ip-reputation-lists-flow.png)
 
 ### 8. Bad Bot
-Honeypot를 이용해 공격자 IP 판별
-
+Honeypot end-point를 정상적인 요청에서는 사용하지 않는 url(.../products/666)로 매핑시켜 공격자를 판별
+![alt text](bad-bot.png)
 
 # Reference
 * AWS WAF Security Automations : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/welcome.html
 * Honeypot : https://en.wikipedia.org/wiki/Honeypot_(computing)
 * Log Parser Options : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/appendix-a.html
-* IP 업데이트 상세 : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/appendix-b.html
+* 보안 항목별 IP 업데이트 상세 : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/appendix-b.html
