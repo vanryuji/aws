@@ -39,11 +39,29 @@ request log를 분석하여 특정 조건(threshold, ignore sufixes 등)에 맞�
 
 * Log Parser
   * AWS WAF rate based rule : "2,000 requests in a five-minute period" 와 같이 request threshold를 설정, time period를 설정 할 수 없음
-  * AWS Lambda log parser : Lambda
-  * Amazon Athena log parser
+  * AWS Lambda log parser : 새로운 로그가 생길 때마다 Lambda가 호출되며, S3에 저장된 파일 단위로 threshold를 계산하기에 특정 상황에서는 defined-threshold에 도달하지 않는 케이스 발생<br>
+    예) 4xx limit threshold : 100<br>
+       log1.log + log2.log = 120<br>
+       하지만 log1.log은 60개, log2.log도 60개<br>
+       결국 한 로그 파일에서 defined-threshold에 도달하지 못함<br>
+  * Amazon Athena log parser : CloudWatch 이벤트로 5분마다 로그 분석 및 차단 IP 리스트 업데이트
 
 ### 6. Scanners and Probes
 request를 분석하여 특정 조건(threshold, http error code 등)에 맞으면 차단 IP 리스트 업데이트
+![alt text](scanners.png)
+
+##### 1) Log Parser
+* __AWS Lambda log parser__ : 새로운 로그가 생길 때마다 Lambda가 호출되며, S3에 저장된 파일 단위로 threshold를 계산하기에 특정 상황에서는 defined-threshold에 도달하지 않는 케이스 발생<br>
+  > 예) 4xx limit threshold : 100<br>
+  > log1.log + log2.log = 120<br>
+  > 하지만 log1.log은 60개, log2.log도 60개<br>
+  > 결국 한 로그 파일에서 defined-threshold에 도달하지 못함<br>
+* __Amazon Athena log parser__ : CloudWatch 이벤트로 5분마다 로그 분석 및 차단 IP 리스트 업데이트
+
+
+##### 2) Conf file
+Conf file은 S3에 아래와 같은 형태로 저장됨<br>
+![alt text](scanner-probes-config-file.png)
 
 ### 7. IP Reputation Lists
 잘 알려진 공격자 IP를 Third-parties IP Reputation Lists를 통해 업데이트
