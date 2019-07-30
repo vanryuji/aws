@@ -36,6 +36,7 @@ Configuring WAF rules can be challenging and burdensome to large and small organ
 
 ### 5. HTTP Flood
 request log를 분석하여 특정 조건(threshold, ignore sufixes 등)에 맞으면 차단 IP 리스트 업데이트
+![alt text](waf-log-parser-flow.png)
 
 ##### 1) Log Parser
 * __AWS WAF rate based rule__ : "2,000 requests in a five-minute period" 와 같이 request threshold를 설정, time period를 설정 할 수 없음<br>
