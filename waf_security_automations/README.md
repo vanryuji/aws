@@ -79,6 +79,9 @@ Honeypot end-point를 정상적인 요청에서는 사용하지 않는 url(.../p
 ![alt text](bad-bot.png)
 > 주의!! Google/Naver도 bot을 사용하기에 robot.txt 파일에 "Disallow: Disallow: /.../products"와 같은 것을 설정해야함
 
+# Price
+You are responsible for the cost of the AWS services used while running the AWS WAF Security Automations solution. The total cost for running this solution depends on the protection activated and the amount of data ingested, stored, and processed. For full details, see the pricing webpage for each AWS service you will be using in this solution.
+
 # Reference
 * AWS WAF Security Automations : https://docs.aws.amazon.com/ko_kr/solutions/latest/aws-waf-security-automations/welcome.html
 * Honeypot : https://en.wikipedia.org/wiki/Honeypot_(computing)
